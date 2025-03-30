@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Add Div to Page",
+  "description": "Adds a div element to the main page using content scripts",
+  "version": "1.0",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["file:///*"],  // You can restrict to specific domains if needed
+      "js": ["content-script.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "hello.html"
+  }
+}
