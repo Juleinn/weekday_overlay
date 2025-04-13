@@ -9,9 +9,9 @@ function addWeekPreview() {
     newDiv.style.top = '100';
     newDiv.style.left = '0';
     newDiv.style.width = '100vw';
-    newDiv.style.height = '300px';
+    //newDiv.style.height = '300px';
     newDiv.style.backgroundColor = '#f2e6d7';
-    newDiv.style.paddingTop = '40px';
+    //newDiv.style.paddingTop = '40px';
     newDiv.style.fontSize = '16px';
     newDiv.style.zIndex = '1000';
     newDiv.id = "week_preview";
@@ -23,6 +23,14 @@ function addWeekPreview() {
 }
 
 function updateWeekPreview(daylist) {
+    let daylist_sorted = {};
+    sorted_keys = Object.keys(daylist).sort();
+    for(i in sorted_keys) {
+        daylist_sorted[sorted_keys[i]] = daylist[sorted_keys[i]];
+    }
+    console.log({daylist_sorted});
+    daylist = daylist_sorted;
+
     let newDiv = document.getElementById("week_preview");
 
     let daybody = '';
@@ -95,7 +103,7 @@ border-radius: 5px;
 }
 
 daylist = {
-    "2025-03-03": {"cofee": 20, "coffee": 50, "stuff":10},
+    "2025-03-05": {"cofee": 20, "coffee": 50, "stuff":10},
     "2025-03-04": {"cofee": 30, "coffee": 50, "stuff":10},
     "2025-03-06": {"cofee": 50, "coffee": 50, "more_stuff":50},
 }
